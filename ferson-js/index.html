@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Person Management</title>
+  <link href="assets/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="text-bg-primary">
+  <div class="container mt-3">
+    <div class="text-bg-info rounded-4 p-2">
+      <h2 class="mb-4 mt-3 text-center">Person Details</h2>
+      <!-- Form to Add Person Details -->
+      <form id="crudForm" class="mb-2">
+        <div class="mb-3">
+          <label for="fullname" class="form-label">Full Name:</label>
+          <input type="text" class="form-control" id="fullname" required>
+        </div>
+        <div class="mb-3">
+          <label for="gender" class="form-label">Gender:</label>
+          <select id="gender" class="form-select" required>
+            <option>Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="birthdate" class="form-label">Birthdate:</label>
+          <input type="date" class="form-control" id="birthdate" required max="2024-11-19">
+        </div>
+        <div class="mb-3">
+          <label for="age" class="form-label">Age:</label>
+          <input type="number" class="form-control" id="age" readonly>
+        </div>
+        <div class="mb-3">
+          <label for="occupation" class="form-label">Occupation:</label>
+          <input type="text" class="form-control" id="occupation" required>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Add Person</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Person List -->
+     <div class="conttainer mt-5" style="height: 50vh;">
+        <h2 class="text-dark text-center mt-5">Person List</h2>
+    <hr>
+    <div class="row" id="dataList">
+      <!-- Person cards will be autommatic added here -->
+    </div>
+     </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content text-bg-info">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit Person Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editForm">
+            <div class="mb-3">
+              <label for="modalFullName" class="form-label">Full Name:</label>
+              <input type="text" class="form-control" id="modalFullName" required>
+            </div>
+            <div class="mb-3">
+              <label for="modalGender" class="form-label">Gender:</label>
+              <select id="modalGender" class="form-select" required>
+                <option>Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="modalBirthdate" class="form-label">Birthdate:</label>
+              <input type="date" class="form-control" id="modalBirthdate" required max="2024-11-19">
+            </div>
+            <div class="mb-3">
+              <label for="modalAge" class="form-label">Age:</label>
+              <input type="number" class="form-control" id="modalAge" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="modalOccupation" class="form-label">Occupation:</label>
+              <input type="text" class="form-control" id="modalOccupation" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="assets/scripts/script.js"></script>
+  <script src="assets/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
